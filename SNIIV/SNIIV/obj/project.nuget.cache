@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "PoEGZiVlbCZ2epknggDEa9hKzECsP42ktQ1m6ZPPlrVyHX5cTD5GcfZZlaBZLiD4KY7/Til0DkGP4LgGpydKtg==",
+  "dgSpecHash": "cqYQRSXey2n+dVMTUaMZxW9KohAJmsvSi5N7v4TQKu4gzGchiil5PPQKx9HPdPOgZpEXcxEVMUH5HmirZslXUQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rafa_\\GitHub\\sniiv-core\\SNIIV\\SNIIV\\SNIIV.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\rafa_\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
   "logs": []
 }
