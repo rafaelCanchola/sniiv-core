@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{8F4CC021-C80D-4DAC-88AB-484A53B60827}|Default">
+  <MonoDevelop.Ide.ItemProperties.SNIIV PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SNIIV/Controllers/CuboConavi.cs">
+    <Files>
+      <File FileName="SNIIV/Data/ApplicationDbContext.cs" Line="174" Column="14" IsPinned="True" />
+      <File FileName="SNIIV/Models/c_ee.cs" />
+      <File FileName="SNIIV/Models/banjercito.cs" />
+      <File FileName="SNIIV/Models/c_registro_patronal.cs" />
+      <File FileName="SNIIV/Models/imss.cs" />
+      <File FileName="SNIIV/Models/c_sector_economico_2.cs" />
+      <File FileName="SNIIV/Models/c_sector_economico_4.cs" />
+      <File FileName="SNIIV/Models/cubo_conavi_bak.cs" Line="7" Column="15" />
+      <File FileName="SNIIV/Controllers/CuboConavi.cs" Line="4" Column="34" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SNIIV" expanded="True">
+            <Node name="SNIIV" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="CuboConavi.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

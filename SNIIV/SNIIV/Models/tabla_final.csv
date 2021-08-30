@@ -1,0 +1,311 @@
+CONTEXT
+"public Dbset<banjercito> banjercito {get; set;}
+"
+"public Dbset<c_avance_de_obra> c_avance_de_obra {get; set;}
+"
+"public Dbset<c_clima> c_clima {get; set;}
+"
+"public Dbset<c_derechohabiente_presidencia> c_derechohabiente_presidencia {get; set;}
+"
+"public Dbset<c_destino_credito> c_destino_credito {get; set;}
+"
+"public Dbset<c_ee> c_ee {get; set;}
+"
+"public Dbset<c_entidad_cofinanciamiento> c_entidad_cofinanciamiento {get; set;}
+"
+"public Dbset<c_entidad_federativa> c_entidad_federativa {get; set;}
+"
+"public Dbset<c_esquema_cnbv> c_esquema_cnbv {get; set;}
+"
+"public Dbset<c_esquema_conavi> c_esquema_conavi {get; set;}
+"
+"public Dbset<c_esquema_fovissste> c_esquema_fovissste {get; set;}
+"
+"public Dbset<c_esquema_infonavit> c_esquema_infonavit {get; set;}
+"
+"public Dbset<c_estado_civil> c_estado_civil {get; set;}
+"
+"public Dbset<c_estatus_programas_conavi> c_estatus_programas_conavi {get; set;}
+"
+"public Dbset<c_estatus_vivienda> c_estatus_vivienda {get; set;}
+"
+"public Dbset<c_genero> c_genero {get; set;}
+"
+"public Dbset<c_grupo_organismo> c_grupo_organismo {get; set;}
+"
+"public Dbset<c_grupo_sisevive> c_grupo_sisevive {get; set;}
+"
+"public Dbset<c_intermediario_financiero_cnbv> c_intermediario_financiero_cnbv {get; set;}
+"
+"public Dbset<c_intermediario_financiero_fovissste> c_intermediario_financiero_fovissste {get; set;}
+"
+"public Dbset<c_intermediario_financiero_habitat> c_intermediario_financiero_habitat {get; set;}
+"
+"public Dbset<c_intermediario_financiero_infonavit> c_intermediario_financiero_infonavit {get; set;}
+"
+"public Dbset<c_linea_apoyo_presidencia> c_linea_apoyo_presidencia {get; set;}
+"
+"public Dbset<c_linea_credito_banjercito> c_linea_credito_banjercito {get; set;}
+"
+"public Dbset<c_linea_credito_cnbv> c_linea_credito_cnbv {get; set;}
+"
+"public Dbset<c_linea_credito_fovissste> c_linea_credito_fovissste {get; set;}
+"
+"public Dbset<c_linea_credito_fovissste2> c_linea_credito_fovissste2 {get; set;}
+"
+"public Dbset<c_linea_credito_habitat> c_linea_credito_habitat {get; set;}
+"
+"public Dbset<c_linea_credito_infonavit_bak> c_linea_credito_infonavit_bak {get; set;}
+"
+"public Dbset<c_linea_credito_shf> c_linea_credito_shf {get; set;}
+"
+"public Dbset<c_linea_infonavit> c_linea_infonavit {get; set;}
+"
+"public Dbset<c_linea_subsidio_conavi> c_linea_subsidio_conavi {get; set;}
+"
+"public Dbset<c_localidad> c_localidad {get; set;}
+"
+"public Dbset<c_mes> c_mes {get; set;}
+"
+"public Dbset<c_modalidad> c_modalidad {get; set;}
+"
+"public Dbset<c_modalidad_fovissste> c_modalidad_fovissste {get; set;}
+"
+"public Dbset<c_modalidad_issste> c_modalidad_issste {get; set;}
+"
+"public Dbset<c_modalidad_presidencia> c_modalidad_presidencia {get; set;}
+"
+"public Dbset<c_modalidad_semanal> c_modalidad_semanal {get; set;}
+"
+"public Dbset<c_modalidad_sniiv> c_modalidad_sniiv {get; set;}
+"
+"public Dbset<c_moneda> c_moneda {get; set;}
+"
+"public Dbset<c_municipio> c_municipio {get; set;}
+"
+"public Dbset<c_municipio_imss> c_municipio_imss {get; set;}
+"
+"public Dbset<c_nombramiento> c_nombramiento {get; set;}
+"
+"public Dbset<c_oeo> c_oeo {get; set;}
+"
+"public Dbset<c_organismo> c_organismo {get; set;}
+"
+"public Dbset<c_pcu> c_pcu {get; set;}
+"
+"public Dbset<c_periodo_cnbv> c_periodo_cnbv {get; set;}
+"
+"public Dbset<c_periodo_conavi_semanal> c_periodo_conavi_semanal {get; set;}
+"
+"public Dbset<c_periodo_demanda_potencial> c_periodo_demanda_potencial {get; set;}
+"
+"public Dbset<c_periodo_financiamientos> c_periodo_financiamientos {get; set;}
+"
+"public Dbset<c_periodo_fovissste> c_periodo_fovissste {get; set;}
+"
+"public Dbset<c_periodo_imss> c_periodo_imss {get; set;}
+"
+"public Dbset<c_periodo_infonavit> c_periodo_infonavit {get; set;}
+"
+"public Dbset<c_periodo_inventario> c_periodo_inventario {get; set;}
+"
+"public Dbset<c_periodo_issste> c_periodo_issste {get; set;}
+"
+"public Dbset<c_periodo_presidencia> c_periodo_presidencia {get; set;}
+"
+"public Dbset<c_periodo_registro_vivienda> c_periodo_registro_vivienda {get; set;}
+"
+"public Dbset<c_periodo_renaret> c_periodo_renaret {get; set;}
+"
+"public Dbset<c_periodo_semanal> c_periodo_semanal {get; set;}
+"
+"public Dbset<c_periodo_sisevive> c_periodo_sisevive {get; set;}
+"
+"public Dbset<c_producto_hipotecario> c_producto_hipotecario {get; set;}
+"
+"public Dbset<c_producto_parametrizar_t24> c_producto_parametrizar_t24 {get; set;}
+"
+"public Dbset<c_producto_parametrizar_t24_shf> c_producto_parametrizar_t24_shf {get; set;}
+"
+"public Dbset<c_producto_presentar_ef_shf> c_producto_presentar_ef_shf {get; set;}
+"
+"public Dbset<c_programa> c_programa {get; set;}
+"
+"public Dbset<c_programa_presupuestal> c_programa_presupuestal {get; set;}
+"
+"public Dbset<c_programa_sisevive> c_programa_sisevive {get; set;}
+"
+"public Dbset<c_ramo> c_ramo {get; set;}
+"
+"public Dbset<c_rango_edad> c_rango_edad {get; set;}
+"
+"public Dbset<c_rango_edad_imss> c_rango_edad_imss {get; set;}
+"
+"public Dbset<c_rango_salarial> c_rango_salarial {get; set;}
+"
+"public Dbset<c_rango_salarial_imss> c_rango_salarial_imss {get; set;}
+"
+"public Dbset<c_rango_uma_imss> c_rango_uma_imss {get; set;}
+"
+"public Dbset<c_recamara> c_recamara {get; set;}
+"
+"public Dbset<c_region> c_region {get; set;}
+"
+"public Dbset<c_region_hidrica> c_region_hidrica {get; set;}
+"
+"public Dbset<c_registro_patronal> c_registro_patronal {get; set;}
+"
+"public Dbset<c_salario_infonavit> c_salario_infonavit {get; set;}
+"
+"public Dbset<c_salario_minimo> c_salario_minimo {get; set;}
+"
+"public Dbset<c_sector> c_sector {get; set;}
+"
+"public Dbset<c_sector_economico_1> c_sector_economico_1 {get; set;}
+"
+"public Dbset<c_sector_economico_2> c_sector_economico_2 {get; set;}
+"
+"public Dbset<c_sector_economico_4> c_sector_economico_4 {get; set;}
+"
+"public Dbset<c_sector_laboral> c_sector_laboral {get; set;}
+"
+"public Dbset<c_segmento_demanda_potencial> c_segmento_demanda_potencial {get; set;}
+"
+"public Dbset<c_subprograma> c_subprograma {get; set;}
+"
+"public Dbset<c_subprograma_sniiv> c_subprograma_sniiv {get; set;}
+"
+"public Dbset<c_superficie> c_superficie {get; set;}
+"
+"public Dbset<c_tipo_credito> c_tipo_credito {get; set;}
+"
+"public Dbset<c_tipo_credito_infonavit> c_tipo_credito_infonavit {get; set;}
+"
+"public Dbset<c_tipo_ee> c_tipo_ee {get; set;}
+"
+"public Dbset<c_tipo_ee_sniiv> c_tipo_ee_sniiv {get; set;}
+"
+"public Dbset<c_tipo_ingreso_shf> c_tipo_ingreso_shf {get; set;}
+"
+"public Dbset<c_tipo_institucion_shf> c_tipo_institucion_shf {get; set;}
+"
+"public Dbset<c_tipo_modalidad> c_tipo_modalidad {get; set;}
+"
+"public Dbset<c_tipo_vivienda> c_tipo_vivienda {get; set;}
+"
+"public Dbset<c_tipo_vivienda_fonhapo> c_tipo_vivienda_fonhapo {get; set;}
+"
+"public Dbset<c_tipologia_ruv> c_tipologia_ruv {get; set;}
+"
+"public Dbset<c_tipologia_sisevive> c_tipologia_sisevive {get; set;}
+"
+"public Dbset<c_valor_vivienda> c_valor_vivienda {get; set;}
+"
+"public Dbset<c_valor_vivienda_uma> c_valor_vivienda_uma {get; set;}
+"
+"public Dbset<c_vivienda_sustentable> c_vivienda_sustentable {get; set;}
+"
+"public Dbset<campos> campos {get; set;}
+"
+"public Dbset<carga_renaret> carga_renaret {get; set;}
+"
+"public Dbset<cnbv> cnbv {get; set;}
+"
+"public Dbset<cnbv_coofinanciamiento> cnbv_coofinanciamiento {get; set;}
+"
+"public Dbset<conavi_06100_fte_his> conavi_06100_fte_his {get; set;}
+"
+"public Dbset<conavi_semanal> conavi_semanal {get; set;}
+"
+"public Dbset<cubo_cnbv_bak> cubo_cnbv_bak {get; set;}
+"
+"public Dbset<cubo_conavi_bak> cubo_conavi_bak {get; set;}
+"
+"public Dbset<cubo_financiamientos> cubo_financiamientos {get; set;}
+"
+"public Dbset<cubo_fovissste_bak> cubo_fovissste_bak {get; set;}
+"
+"public Dbset<cubo_imss> cubo_imss {get; set;}
+"
+"public Dbset<cubo_imss_rpt> cubo_imss_rpt {get; set;}
+"
+"public Dbset<cubo_infonavit_bak> cubo_infonavit_bak {get; set;}
+"
+"public Dbset<cubo_inventario_vivienda> cubo_inventario_vivienda {get; set;}
+"
+"public Dbset<cubo_issste> cubo_issste {get; set;}
+"
+"public Dbset<cubo_registro_vivienda_bak> cubo_registro_vivienda_bak {get; set;}
+"
+"public Dbset<cubo_semanal> cubo_semanal {get; set;}
+"
+"public Dbset<cubo_sisevive> cubo_sisevive {get; set;}
+"
+"public Dbset<demanda_potencial_5_10> demanda_potencial_5_10 {get; set;}
+"
+"public Dbset<demanda_potencial_infonavit> demanda_potencial_infonavit {get; set;}
+"
+"public Dbset<demanda_potencial_m10> demanda_potencial_m10 {get; set;}
+"
+"public Dbset<desarrollador_fovissste> desarrollador_fovissste {get; set;}
+"
+"public Dbset<ee_tipo> ee_tipo {get; set;}
+"
+"public Dbset<financiamientos> financiamientos {get; set;}
+"
+"public Dbset<foreign> foreign {get; set;}
+"
+"public Dbset<fovissste> fovissste {get; set;}
+"
+"public Dbset<fovissste_00621_fte_his> fovissste_00621_fte_his {get; set;}
+"
+"public Dbset<grupo_esquema_cnbv> grupo_esquema_cnbv {get; set;}
+"
+"public Dbset<habitat> habitat {get; set;}
+"
+"public Dbset<imss> imss {get; set;}
+"
+"public Dbset<infonavit> infonavit {get; set;}
+"
+"public Dbset<infonavit_00635_fte_his> infonavit_00635_fte_his {get; set;}
+"
+"public Dbset<inventario_estatal> inventario_estatal {get; set;}
+"
+"public Dbset<inventario_municipal> inventario_municipal {get; set;}
+"
+"public Dbset<inventario_vivienda> inventario_vivienda {get; set;}
+"
+"public Dbset<issste> issste {get; set;}
+"
+"public Dbset<join> join {get; set;}
+"
+"public Dbset<linea_credito_esquema_cnbv> linea_credito_esquema_cnbv {get; set;}
+"
+"public Dbset<linea_credito_esquema_infonavit> linea_credito_esquema_infonavit {get; set;}
+"
+"public Dbset<linea_subsidio_tipo_ee> linea_subsidio_tipo_ee {get; set;}
+"
+"public Dbset<mapa_oferta> mapa_oferta {get; set;}
+"
+"public Dbset<primary> primary {get; set;}
+"
+"public Dbset<programas_conavi> programas_conavi {get; set;}
+"
+"public Dbset<quintil_fovissste> quintil_fovissste {get; set;}
+"
+"public Dbset<quintil_infonavit> quintil_infonavit {get; set;}
+"
+"public Dbset<registro_vivienda> registro_vivienda {get; set;}
+"
+"public Dbset<renaret> renaret {get; set;}
+"
+"public Dbset<reporte_presidencia> reporte_presidencia {get; set;}
+"
+"public Dbset<shf> shf {get; set;}
+"
+"public Dbset<sisevive> sisevive {get; set;}
+"
+"public Dbset<sisevive_ruv> sisevive_ruv {get; set;}
+"
+"public Dbset<subprograma_fovissste> subprograma_fovissste {get; set;}
+"
