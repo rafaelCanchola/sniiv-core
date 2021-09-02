@@ -6,6 +6,6 @@ namespace SNIIV.Models
 	{
 		[Key] [StringLength(10)] public string clave {get; set;}
 		[StringLength(10)] public string id_sector_economico_2 {get; set;}
-		[StringLength(50)] public string descripcion {get; set;}
+		public string descripcion {get; set;}
 	}
 }

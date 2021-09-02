@@ -1465,7 +1465,7 @@
       "outputPath": "/Users/rafaelcanchola/GitHub/sniiv-core/SNIIV/SNIIV/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/rafaelcanchola/.config/NuGet/NuGet.Config"
+        "/Users/rafaelcanchola/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

@@ -9,6 +9,6 @@ namespace SNIIV.Models
 		public int edad_fin {get; set;}
 		[StringLength(50)] public string descripcion {get; set;}
 		public int id_rango_edad_conavi {get; set;}
-		[StringLength(10)] public string abreviacion {get; set;}
+		[StringLength(50)] public string abreviacion {get; set;}
 	}
 }

@@ -1,9 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SNIIV.Models
 {
 	public class cubo_fovissste_bak
 	{
+		[Column(TypeName = "bigint")]
 		public int folio {get; set;}
 		public int anio {get; set;}
 		public int mes {get; set;}
@@ -14,7 +17,8 @@ namespace SNIIV.Models
 		public int id_linea_credito {get; set;}
 		public int id_ee {get; set;}
 		public int id_genero {get; set;}
-		public int id_rango_edad {get; set;}
+		public int id_rango_edad {get; set; }
+		public int id_rango_salarial { get; set; }
 		public int id_valor_vivienda {get; set;}
 		public int id_vivienda_sustentable {get; set;}
 		public Decimal monto {get; set;}

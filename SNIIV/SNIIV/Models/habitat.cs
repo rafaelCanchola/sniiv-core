@@ -4,7 +4,7 @@ namespace SNIIV.Models
 {
 	public class habitat
 	{
-		[Key] public int id {get; set;}
+		public string id {get; set;}
 		public DateTime fecha_operacion {get; set;}
 		[StringLength(10)] public string clave_entidad_federativa {get; set;}
 		[StringLength(10)] public string clave_municipio {get; set;}

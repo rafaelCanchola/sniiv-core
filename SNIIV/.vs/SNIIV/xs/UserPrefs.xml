@@ -1,27 +1,24 @@
 ﻿<Properties StartupConfiguration="{8F4CC021-C80D-4DAC-88AB-484A53B60827}|Default">
   <MonoDevelop.Ide.ItemProperties.SNIIV PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SNIIV/Controllers/CuboConavi.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SNIIV/Models/conavi_06100_fte_his.cs">
     <Files>
-      <File FileName="SNIIV/Data/ApplicationDbContext.cs" Line="174" Column="14" IsPinned="True" />
-      <File FileName="SNIIV/Models/c_ee.cs" />
+      <File FileName="SNIIV/Data/ApplicationDbContext.cs" Line="45" Column="101" />
+      <File FileName="SNIIV/Models/mapa_oferta.cs" />
       <File FileName="SNIIV/Models/banjercito.cs" />
-      <File FileName="SNIIV/Models/c_registro_patronal.cs" />
-      <File FileName="SNIIV/Models/imss.cs" />
-      <File FileName="SNIIV/Models/c_sector_economico_2.cs" />
-      <File FileName="SNIIV/Models/c_sector_economico_4.cs" />
-      <File FileName="SNIIV/Models/cubo_conavi_bak.cs" Line="7" Column="15" />
-      <File FileName="SNIIV/Controllers/CuboConavi.cs" Line="4" Column="34" />
+      <File FileName="SNIIV/Models/habitat.cs" Line="5" Column="15" />
+      <File FileName="SNIIV/Models/conavi_06100_fte_his.cs" Line="30" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SNIIV" expanded="True">
             <Node name="SNIIV" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="CuboConavi.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="conavi_06100_fte_his.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

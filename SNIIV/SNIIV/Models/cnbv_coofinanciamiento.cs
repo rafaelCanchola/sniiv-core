@@ -8,13 +8,13 @@ namespace SNIIV.Models
 		[StringLength(10)] public string cve_institucion {get; set;}
 		[StringLength(10)] public string cve_periodo {get; set;}
 		public int numero_de_creditos {get; set;}
-		public int Responsabilidad_total {get; set;}
+		public int responsabilidad_total {get; set;}
 		[StringLength(10)] public string cve_marginal {get; set;}
 		public int cve_destino_credito {get; set;}
 		[StringLength(10)] public string cve_moneda {get; set;}
 		public int monto_original_del_credito {get; set;}
 		public int originacion_valor_vivienda {get; set;}
-		public int Ingreso_men_bruto_acred {get; set;}
+		public int ingreso_men_bruto_acred {get; set;}
 		[StringLength(10)] public string cve_tipo_comp_ingresos {get; set;}
 		[StringLength(10)] public string cve_sec_lab_acred {get; set;}
 		[StringLength(10)] public string cve_estado {get; set;}

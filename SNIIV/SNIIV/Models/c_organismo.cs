@@ -6,7 +6,7 @@ namespace SNIIV.Models
 	{
 		[Key] [StringLength(10)] public string clave {get; set;}
 		public int id_grupo_organismo {get; set;}
-		[StringLength(10)] public string siglas {get; set;}
+		[StringLength(50)] public string siglas {get; set;}
 		public string descripcion {get; set;}
 	}
 }

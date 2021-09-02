@@ -4,16 +4,15 @@ namespace SNIIV.Models
 {
 	public class mapa_oferta
 	{
-		[Key] public int id { get; set; }
 		public int anio {get; set;}
 		public int mes {get; set;}
 		[StringLength(10)] public string cve_ent {get; set;}
 		[StringLength(10)] public string cve_mun {get; set;}
 		public string mun {get; set;}
-		[StringLength(25)] public string cv_oferta {get; set;}
+		[Key][StringLength(25)] public string cv_oferta {get; set;}
 		public string nom_oferta {get; set;}
 		public string cv_oferente {get; set;}
-		[StringLength(25)] public string tx_oferente {get; set;}
+		public string tx_oferente {get; set;}
 		public int cv_gpo_conavi {get; set;}
 		public string gpo_conavi {get; set;}
 		public Decimal latitud_of {get; set;}
@@ -30,6 +29,7 @@ namespace SNIIV.Models
 		public int u3 {get; set;}
 		public int fuera_contorno {get; set;}
 		public int nd {get; set;}
+		public int avance_0 { get; set; }
 		public int avance_1_19 {get; set;}
 		public int avance_20_39 {get; set;}
 		public int avance_40_59 {get; set;}

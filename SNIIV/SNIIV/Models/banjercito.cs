@@ -4,7 +4,7 @@ namespace SNIIV.Models
 {
 	public class banjercito
 	{
-		[Key] public int id {get; set;}
+		public int id {get; set;}
 		[StringLength(10)] public string clave_entidad_federativa {get; set;}
 		[StringLength(10)] public string clave_municipio {get; set;}
 		public int id_linea_credito {get; set;}
@@ -13,7 +13,7 @@ namespace SNIIV.Models
 		public Decimal monto {get; set;}
 		[StringLength(10)] public string genero {get; set;}
 		public int edad {get; set;}
-		public Decimal ingreso_VSMMDF {get; set;}
+		public Decimal ingreso_vsmmdf {get; set;}
 		public Decimal valor_vivienda_vsmmdf {get; set;}
 		public string tipo_vivienda {get; set;}
 		public int anio {get; set;}

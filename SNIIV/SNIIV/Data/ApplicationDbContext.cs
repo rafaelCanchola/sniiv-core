@@ -11,6 +11,7 @@ namespace SNIIV.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<banjercito>().HasKey(entity => new { entity.clave_entidad_federativa, entity.clave_municipio, entity.id_linea_credito, entity.anio, entity.mes, entity.id });
             modelBuilder.Entity<c_localidad>().HasKey(entity => new { entity.clave_entidad_federativa, entity.clave_municipio, entity.clave });
             modelBuilder.Entity<c_municipio>().HasKey(entity => new {entity.clave_entidad_federativa,entity.clave_mun });
             modelBuilder.Entity<c_municipio_imss>().HasKey(entity => new { entity.clave, entity.id_delegacion });
@@ -27,7 +28,7 @@ namespace SNIIV.Data
             modelBuilder.Entity<c_periodo_renaret>().HasKey(entity => new { entity.anio, entity.mes });
             modelBuilder.Entity<carga_renaret>().HasKey(entity => new { entity.anio, entity.id, entity.mes });
             modelBuilder.Entity<cnbv>().HasKey(entity => new { entity.id, entity.anio, entity.mes });
-            modelBuilder.Entity<conavi_06100_fte_his>().HasKey(entity => new { entity.PERIODO_REP, entity.id });
+            modelBuilder.Entity<conavi_06100_fte_his>().HasKey(entity => new { entity.periodo_rep, entity.id });
             modelBuilder.Entity<conavi_semanal>().HasKey(entity => new { entity.folio, entity.anio });
             modelBuilder.Entity<cubo_cnbv_bak>().HasKey(entity => new { entity.id, entity.anio, entity.mes });
             modelBuilder.Entity<cubo_conavi_bak>().HasKey(entity => new { entity.folio, entity.anio, entity.clave_estado, entity.clave_municipio });
@@ -40,7 +41,8 @@ namespace SNIIV.Data
             modelBuilder.Entity<desarrollador_fovissste>().HasKey(entity => new { entity.folio, entity.anio });
             modelBuilder.Entity<financiamientos>().HasKey(entity => new { entity.id, entity.anio, entity.mes, entity.clave_organismo });
             modelBuilder.Entity<fovissste>().HasKey(entity => new { entity.folio, entity.anio });
-            modelBuilder.Entity<fovissste_00621_fte_his>().HasKey(entity => new { entity.PERIODO_REP, entity.id });
+            modelBuilder.Entity<fovissste_00621_fte_his>().HasKey(entity => new { entity.periodo_rep, entity.id });
+            modelBuilder.Entity<habitat>().HasKey(entity => new { entity.id, entity.anio, entity.mes});
             modelBuilder.Entity<imss>().HasKey(entity => new { entity.id, entity.anio, entity.mes });
             modelBuilder.Entity<infonavit>().HasKey(entity => new { entity.id, entity.anio });
             modelBuilder.Entity<quintil_fovissste>().HasKey(entity => new { entity.consecutivo, entity.anio });
@@ -131,7 +133,8 @@ namespace SNIIV.Data
             modelBuilder.Entity<linea_credito_esquema_cnbv>().HasOne<c_linea_credito_cnbv>().WithMany().HasForeignKey(entity => entity.id_linea_credito_cnbv);
             modelBuilder.Entity<linea_credito_esquema_cnbv>().HasOne<c_esquema_cnbv>().WithMany().HasForeignKey(entity => entity.id_esquema_cnbv);
             modelBuilder.Entity<linea_credito_esquema_cnbv>().HasOne<c_tipo_credito>().WithMany().HasForeignKey(entity => entity.id_tipo_credito);
-            modelBuilder.Entity<linea_credito_esquema_infonavit>().HasOne<c_tipo_credito>().WithMany().HasForeignKey(entity => entity.id_tipo_credito);
+            modelBuilder.Entity<linea_credito_esquema_infonavit>().HasOne<c_esquema_infonavit>().WithMany().HasForeignKey(entity => entity.id_esquema_infonavit);
+            modelBuilder.Entity<linea_credito_esquema_infonavit>().HasOne<c_linea_credito_infonavit_bak>().WithMany().HasForeignKey(entity => entity.id_linea_credito_infonavit);
             modelBuilder.Entity<linea_credito_esquema_infonavit>().HasOne<c_tipo_credito>().WithMany().HasForeignKey(entity => entity.id_tipo_credito);
             modelBuilder.Entity<linea_subsidio_tipo_ee>().HasOne<c_linea_subsidio_conavi>().WithMany().HasForeignKey(entity => entity.id_linea_subsidio);
             modelBuilder.Entity<linea_subsidio_tipo_ee>().HasOne<c_tipo_ee>().WithMany().HasForeignKey(entity => entity.id_tipo_ee);
@@ -185,11 +188,11 @@ namespace SNIIV.Data
             modelBuilder.Entity<cubo_conavi_bak>().HasOne<c_vivienda_sustentable>().WithMany().HasForeignKey(entity => entity.id_vivienda_sustentable);
             modelBuilder.Entity<cubo_conavi_bak>().HasOne<c_pcu>().WithMany().HasForeignKey(entity => entity.id_pcu);
 
-
+            
         }
 
         public DbSet<banjercito> banjercito { get; set; }
-        public DbSet<c_avance_de_obra> c_avance_de_obra { get; set; }
+        public DbSet<c_avance_obra> c_avance_obra { get; set; }
         public DbSet<c_clima> c_clima { get; set; }
         public DbSet<c_derechohabiente_presidencia> c_derechohabiente_presidencia { get; set; }
         public DbSet<c_destino_credito> c_destino_credito { get; set; }

@@ -1,9 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SNIIV.Models
 {
 	public class desarrollador_fovissste
 	{
+		[Column(TypeName = "bigint")]
 		public int folio {get; set;}
 		public int anio {get; set;}
 		public int mes {get; set;}

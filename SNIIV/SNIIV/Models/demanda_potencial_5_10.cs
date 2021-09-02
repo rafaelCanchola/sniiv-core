@@ -4,8 +4,8 @@ namespace SNIIV.Models
 {
 	public class demanda_potencial_5_10
 	{
-		[StringLength(10)] public string ent {get; set;}
-		[StringLength(10)] public string mun {get; set;}
+		public string ent {get; set;}
+		public string mun {get; set;}
 		public int hasta_2_6_uma {get; set;}
 		public int de_2_61_a_3_0_uma {get; set;}
 		public int de_3_1_a_4_0_uma {get; set;}

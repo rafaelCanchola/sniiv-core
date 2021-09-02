@@ -11,7 +11,7 @@ namespace SNIIV.Models
 		public int id_linea_credito {get; set;}
 		public int responsabilidad_total {get; set;}
 		public int id_moneda {get; set;}
-		public int ingreso_VSMMDF {get; set;}
+		public int ingreso_vsmmdf {get; set;}
 		public int valor_vivienda {get; set;}
 		[StringLength(50)] public string tipo_comprobacion {get; set;}
 		public int id_sector_laboral {get; set;}

@@ -10,9 +10,9 @@ namespace SNIIV.Models
 		public string municipio {get; set;}
 		public string estado {get; set;}
 		public string cd_sun {get; set;}
-		[StringLength(10)] public Decimal sup_ha {get; set;}
-		[StringLength(10)] public string grado_desar_declarado {get; set;}
-		[StringLength(10)] public string grado_desar_verificado {get; set;}
+		public Decimal sup_ha {get; set;}
+		public string grado_desar_declarado {get; set;}
+		public string grado_desar_verificado {get; set;}
 		[StringLength(10)] public string calif {get; set;}
 		[StringLength(10)] public string calif_pcu {get; set;}
 		[StringLength(10)] public string calif_mesa {get; set;}

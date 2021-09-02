@@ -9,7 +9,7 @@ namespace SNIIV.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "c_avance_de_obra",
+                name: "c_avance_obra",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -18,7 +18,7 @@ namespace SNIIV.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_c_avance_de_obra", x => x.id);
+                    table.PrimaryKey("PK_c_avance_obra", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -67,7 +67,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -234,7 +234,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -247,7 +247,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -313,7 +313,7 @@ namespace SNIIV.Migrations
                     clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     clave = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    descripcion = table.Column<string>(type: "text", nullable: true),
                     ambito = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     status = table.Column<bool>(type: "boolean", nullable: false)
                 },
@@ -368,7 +368,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -381,8 +381,8 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
-                    nombre = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true),
+                    nombre = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -421,7 +421,7 @@ namespace SNIIV.Migrations
                 {
                     clave = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id_delegacion = table.Column<int>(type: "integer", nullable: false),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    descripcion = table.Column<string>(type: "text", nullable: true),
                     clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
                 },
@@ -449,7 +449,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -653,7 +653,7 @@ namespace SNIIV.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -707,7 +707,7 @@ namespace SNIIV.Migrations
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
-                    abreviacion = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
+                    abreviacion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -720,7 +720,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -751,7 +751,7 @@ namespace SNIIV.Migrations
                     edad_fin = table.Column<int>(type: "integer", nullable: false),
                     descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     id_rango_edad_conavi = table.Column<int>(type: "integer", nullable: false),
-                    abreviacion = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
+                    abreviacion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -792,7 +792,7 @@ namespace SNIIV.Migrations
                 {
                     clave = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
-                    abreviacion = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
+                    abreviacion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -854,18 +854,13 @@ namespace SNIIV.Migrations
                 name: "c_salario_infonavit",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    anio = table.Column<int>(type: "integer", nullable: false),
-                    periodo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    A = table.Column<decimal>(type: "numeric", nullable: false),
-                    B = table.Column<decimal>(type: "numeric", nullable: false),
-                    C = table.Column<decimal>(type: "numeric", nullable: false),
-                    UMA = table.Column<decimal>(type: "numeric", nullable: false)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_c_salario_infonavit", x => x.Id);
+                    table.PrimaryKey("PK_c_salario_infonavit", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -874,7 +869,12 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    anio = table.Column<int>(type: "integer", nullable: false),
+                    periodo = table.Column<string>(type: "text", nullable: true),
+                    a = table.Column<decimal>(type: "numeric", nullable: false),
+                    b = table.Column<decimal>(type: "numeric", nullable: false),
+                    c = table.Column<decimal>(type: "numeric", nullable: false),
+                    uma = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -900,8 +900,8 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
-                    etiqueta = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true),
+                    etiqueta = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -927,7 +927,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombre = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    nombre = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     orden = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -1021,7 +1021,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1142,13 +1142,13 @@ namespace SNIIV.Migrations
                     cve_institucion = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     cve_periodo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     numero_de_creditos = table.Column<int>(type: "integer", nullable: false),
-                    Responsabilidad_total = table.Column<int>(type: "integer", nullable: false),
+                    responsabilidad_total = table.Column<int>(type: "integer", nullable: false),
                     cve_marginal = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     cve_destino_credito = table.Column<int>(type: "integer", nullable: false),
                     cve_moneda = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     monto_original_del_credito = table.Column<int>(type: "integer", nullable: false),
                     originacion_valor_vivienda = table.Column<int>(type: "integer", nullable: false),
-                    Ingreso_men_bruto_acred = table.Column<int>(type: "integer", nullable: false),
+                    ingreso_men_bruto_acred = table.Column<int>(type: "integer", nullable: false),
                     cve_tipo_comp_ingresos = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     cve_sec_lab_acred = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     cve_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1167,14 +1167,14 @@ namespace SNIIV.Migrations
                 name: "conavi_06100_fte_his",
                 columns: table => new
                 {
-                    PERIODO_REP = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    periodo_rep = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id = table.Column<int>(type: "integer", nullable: false),
-                    Fecha_operacion = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    fecha_operacion = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     genero = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     edad = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     monto_subsidio_federal = table.Column<decimal>(type: "numeric", nullable: false),
                     valor_solucion_habitacional = table.Column<decimal>(type: "numeric", nullable: false),
-                    ingresos_VSMGV = table.Column<decimal>(type: "numeric", nullable: false),
+                    ingresos_vsmgv = table.Column<decimal>(type: "numeric", nullable: false),
                     ingresos_en_pesos = table.Column<decimal>(type: "numeric", nullable: false),
                     modalidad = table.Column<string>(type: "text", nullable: true),
                     linea_apoyo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1193,7 +1193,7 @@ namespace SNIIV.Migrations
                     ubicacion = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     esquemas = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     nama = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    Folio = table.Column<int>(type: "integer", nullable: false),
+                    folio = table.Column<int>(type: "integer", nullable: false),
                     curp = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
@@ -1203,7 +1203,7 @@ namespace SNIIV.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_conavi_06100_fte_his", x => new { x.PERIODO_REP, x.id });
+                    table.PrimaryKey("PK_conavi_06100_fte_his", x => new { x.periodo_rep, x.id });
                 });
 
             migrationBuilder.CreateTable(
@@ -1235,7 +1235,7 @@ namespace SNIIV.Migrations
                 name: "cubo_financiamientos",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false),
+                    id = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     clave_organismo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
@@ -1243,7 +1243,7 @@ namespace SNIIV.Migrations
                     clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     id_grupo_organismo = table.Column<int>(type: "integer", nullable: false),
                     id_modalidad = table.Column<int>(type: "integer", nullable: false),
-                    Id_tipo_credito = table.Column<int>(type: "integer", nullable: false),
+                    id_tipo_credito = table.Column<int>(type: "integer", nullable: false),
                     id_destino_credito = table.Column<int>(type: "integer", nullable: false),
                     id_genero = table.Column<int>(type: "integer", nullable: false),
                     id_rango_edad = table.Column<int>(type: "integer", nullable: false),
@@ -1262,7 +1262,7 @@ namespace SNIIV.Migrations
                 name: "cubo_fovissste_bak",
                 columns: table => new
                 {
-                    folio = table.Column<int>(type: "integer", nullable: false),
+                    folio = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     clave_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1273,6 +1273,7 @@ namespace SNIIV.Migrations
                     id_ee = table.Column<int>(type: "integer", nullable: false),
                     id_genero = table.Column<int>(type: "integer", nullable: false),
                     id_rango_edad = table.Column<int>(type: "integer", nullable: false),
+                    id_rango_salarial = table.Column<int>(type: "integer", nullable: false),
                     id_valor_vivienda = table.Column<int>(type: "integer", nullable: false),
                     id_vivienda_sustentable = table.Column<int>(type: "integer", nullable: false),
                     monto = table.Column<decimal>(type: "numeric", nullable: false),
@@ -1423,8 +1424,7 @@ namespace SNIIV.Migrations
                 name: "cubo_semanal",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     clave_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     clave_organismo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1468,7 +1468,7 @@ namespace SNIIV.Migrations
                 name: "desarrollador_fovissste",
                 columns: table => new
                 {
-                    folio = table.Column<int>(type: "integer", nullable: false),
+                    folio = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     clave_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1487,9 +1487,9 @@ namespace SNIIV.Migrations
                 name: "fovissste_00621_fte_his",
                 columns: table => new
                 {
-                    PERIODO_REP = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    periodo_rep = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id = table.Column<int>(type: "integer", nullable: false),
-                    CUV = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    cuv = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     entidad_federativa = table.Column<string>(type: "text", nullable: true),
                     municipio = table.Column<string>(type: "text", nullable: true),
                     modalidad = table.Column<string>(type: "text", nullable: true),
@@ -1502,18 +1502,18 @@ namespace SNIIV.Migrations
                     valor_vivienda = table.Column<decimal>(type: "numeric", nullable: false),
                     genero = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     edad = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    ingreso_VSMMDF = table.Column<decimal>(type: "numeric", nullable: false),
+                    ingreso_vsmmdf = table.Column<decimal>(type: "numeric", nullable: false),
                     mes_corte = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     fecha_de_firma = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     observaciones = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    desarrollador = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    folio = table.Column<int>(type: "integer", nullable: false),
+                    desarrollador = table.Column<string>(type: "text", nullable: true),
+                    folio = table.Column<long>(type: "bigint", nullable: false),
                     mes = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     contador = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fovissste_00621_fte_his", x => new { x.PERIODO_REP, x.id });
+                    table.PrimaryKey("PK_fovissste_00621_fte_his", x => new { x.periodo_rep, x.id });
                 });
 
             migrationBuilder.CreateTable(
@@ -1619,8 +1619,7 @@ namespace SNIIV.Migrations
                 name: "issste",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1648,17 +1647,15 @@ namespace SNIIV.Migrations
                 name: "mapa_oferta",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    cv_oferta = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     cve_ent = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     cve_mun = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     mun = table.Column<string>(type: "text", nullable: true),
-                    cv_oferta = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: true),
                     nom_oferta = table.Column<string>(type: "text", nullable: true),
                     cv_oferente = table.Column<string>(type: "text", nullable: true),
-                    tx_oferente = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: true),
+                    tx_oferente = table.Column<string>(type: "text", nullable: true),
                     cv_gpo_conavi = table.Column<int>(type: "integer", nullable: false),
                     gpo_conavi = table.Column<string>(type: "text", nullable: true),
                     latitud_of = table.Column<decimal>(type: "numeric", nullable: false),
@@ -1675,6 +1672,7 @@ namespace SNIIV.Migrations
                     u3 = table.Column<int>(type: "integer", nullable: false),
                     fuera_contorno = table.Column<int>(type: "integer", nullable: false),
                     nd = table.Column<int>(type: "integer", nullable: false),
+                    avance_0 = table.Column<int>(type: "integer", nullable: false),
                     avance_1_19 = table.Column<int>(type: "integer", nullable: false),
                     avance_20_39 = table.Column<int>(type: "integer", nullable: false),
                     avance_40_59 = table.Column<int>(type: "integer", nullable: false),
@@ -1694,7 +1692,7 @@ namespace SNIIV.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_mapa_oferta", x => x.id);
+                    table.PrimaryKey("PK_mapa_oferta", x => x.cv_oferta);
                 });
 
             migrationBuilder.CreateTable(
@@ -1827,7 +1825,7 @@ namespace SNIIV.Migrations
                 {
                     clave = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id_grupo_organismo = table.Column<int>(type: "integer", nullable: false),
-                    siglas = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    siglas = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -1865,7 +1863,7 @@ namespace SNIIV.Migrations
                 name: "fovissste",
                 columns: table => new
                 {
-                    folio = table.Column<int>(type: "integer", nullable: false),
+                    folio = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     fecha_firma = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     genero = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -1879,9 +1877,9 @@ namespace SNIIV.Migrations
                     id_linea_credito = table.Column<int>(type: "integer", nullable: false),
                     id_esquema = table.Column<int>(type: "integer", nullable: false),
                     id_intermediario = table.Column<int>(type: "integer", nullable: false),
-                    cuv = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    cuv = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     observaciones = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    desarrollador = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    desarrollador = table.Column<string>(type: "text", nullable: true),
                     acciones = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     vivienda_sustentable = table.Column<int>(type: "integer", nullable: false)
@@ -2077,7 +2075,7 @@ namespace SNIIV.Migrations
                         name: "FK_demanda_potencial_infonavit_c_salario_infonavit_id_salario_~",
                         column: x => x.id_salario_infonavit,
                         principalTable: "c_salario_infonavit",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -2087,7 +2085,7 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id_sector_economico_1 = table.Column<int>(type: "integer", nullable: false),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -2104,35 +2102,15 @@ namespace SNIIV.Migrations
                 name: "c_linea_credito_banjercito",
                 columns: table => new
                 {
-                    id_tipo_credito = table.Column<int>(type: "integer", nullable: false),
-                    id_subprograma = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_c_linea_credito_banjercito", x => x.id_tipo_credito);
-                    table.ForeignKey(
-                        name: "FK_c_linea_credito_banjercito_c_tipo_credito_id_tipo_credito",
-                        column: x => x.id_tipo_credito,
-                        principalTable: "c_tipo_credito",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "linea_credito_esquema_infonavit",
-                columns: table => new
-                {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    id_esquema_Infonavit = table.Column<int>(type: "integer", nullable: false),
-                    id_linea_credito_Infonavit = table.Column<int>(type: "integer", nullable: false),
                     id_tipo_credito = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_linea_credito_esquema_infonavit", x => x.id);
+                    table.PrimaryKey("PK_c_linea_credito_banjercito", x => x.id);
                     table.ForeignKey(
-                        name: "FK_linea_credito_esquema_infonavit_c_tipo_credito_id_tipo_cred~",
+                        name: "FK_c_linea_credito_banjercito_c_tipo_credito_id_tipo_credito",
                         column: x => x.id_tipo_credito,
                         principalTable: "c_tipo_credito",
                         principalColumn: "id",
@@ -2247,9 +2225,9 @@ namespace SNIIV.Migrations
                     municipio = table.Column<string>(type: "text", nullable: true),
                     estado = table.Column<string>(type: "text", nullable: true),
                     cd_sun = table.Column<string>(type: "text", nullable: true),
-                    sup_ha = table.Column<decimal>(type: "numeric", maxLength: 10, nullable: false),
-                    grado_desar_declarado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    grado_desar_verificado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    sup_ha = table.Column<decimal>(type: "numeric", nullable: false),
+                    grado_desar_declarado = table.Column<string>(type: "text", nullable: true),
+                    grado_desar_verificado = table.Column<string>(type: "text", nullable: true),
                     calif = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     calif_pcu = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     calif_mesa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -2286,8 +2264,8 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ent = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    mun = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    ent = table.Column<string>(type: "text", nullable: true),
+                    mun = table.Column<string>(type: "text", nullable: true),
                     hasta_2_6_uma = table.Column<int>(type: "integer", nullable: false),
                     de_2_61_a_3_0_uma = table.Column<int>(type: "integer", nullable: false),
                     de_3_1_a_4_0_uma = table.Column<int>(type: "integer", nullable: false),
@@ -2316,8 +2294,8 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ent = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    mun = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    ent = table.Column<string>(type: "text", nullable: true),
+                    mun = table.Column<string>(type: "text", nullable: true),
                     hasta_2_6_uma = table.Column<int>(type: "integer", nullable: false),
                     de_2_61_a_4_0_uma = table.Column<int>(type: "integer", nullable: false),
                     de_4_1_a_5_0_uma = table.Column<int>(type: "integer", nullable: false),
@@ -2344,8 +2322,9 @@ namespace SNIIV.Migrations
                 name: "habitat",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id = table.Column<string>(type: "text", nullable: false),
+                    anio = table.Column<int>(type: "integer", nullable: false),
+                    mes = table.Column<int>(type: "integer", nullable: false),
                     fecha_operacion = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -2361,13 +2340,11 @@ namespace SNIIV.Migrations
                     edad = table.Column<int>(type: "integer", nullable: false),
                     ingreso_salarial = table.Column<decimal>(type: "numeric", nullable: false),
                     valor_vivienda = table.Column<int>(type: "integer", nullable: false),
-                    tipo_vivienda = table.Column<int>(type: "integer", nullable: false),
-                    anio = table.Column<int>(type: "integer", nullable: false),
-                    mes = table.Column<int>(type: "integer", nullable: false)
+                    tipo_vivienda = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_habitat", x => x.id);
+                    table.PrimaryKey("PK_habitat", x => new { x.id, x.anio, x.mes });
                     table.ForeignKey(
                         name: "FK_habitat_c_entidad_federativa_clave_entidad_federativa",
                         column: x => x.clave_entidad_federativa,
@@ -2495,8 +2472,7 @@ namespace SNIIV.Migrations
                 name: "sisevive",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id = table.Column<long>(type: "bigint", nullable: false),
                     cuv = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
@@ -2596,7 +2572,7 @@ namespace SNIIV.Migrations
                 {
                     clave = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id_sector_economico_2 = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
+                    descripcion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -2613,36 +2589,35 @@ namespace SNIIV.Migrations
                 name: "banjercito",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
-                    clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    id = table.Column<int>(type: "integer", nullable: false),
+                    clave_entidad_federativa = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     id_linea_credito = table.Column<int>(type: "integer", nullable: false),
+                    anio = table.Column<int>(type: "integer", nullable: false),
+                    mes = table.Column<int>(type: "integer", nullable: false),
                     producto = table.Column<string>(type: "text", nullable: true),
                     acciones = table.Column<int>(type: "integer", nullable: false),
                     monto = table.Column<decimal>(type: "numeric", nullable: false),
                     genero = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
                     edad = table.Column<int>(type: "integer", nullable: false),
-                    ingreso_VSMMDF = table.Column<decimal>(type: "numeric", nullable: false),
+                    ingreso_vsmmdf = table.Column<decimal>(type: "numeric", nullable: false),
                     valor_vivienda_vsmmdf = table.Column<decimal>(type: "numeric", nullable: false),
-                    tipo_vivienda = table.Column<string>(type: "text", nullable: true),
-                    anio = table.Column<int>(type: "integer", nullable: false),
-                    mes = table.Column<int>(type: "integer", nullable: false)
+                    tipo_vivienda = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_banjercito", x => x.id);
+                    table.PrimaryKey("PK_banjercito", x => new { x.clave_entidad_federativa, x.clave_municipio, x.id_linea_credito, x.anio, x.mes, x.id });
                     table.ForeignKey(
                         name: "FK_banjercito_c_entidad_federativa_clave_entidad_federativa",
                         column: x => x.clave_entidad_federativa,
                         principalTable: "c_entidad_federativa",
                         principalColumn: "clave",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_banjercito_c_linea_credito_banjercito_id_linea_credito",
                         column: x => x.id_linea_credito,
                         principalTable: "c_linea_credito_banjercito",
-                        principalColumn: "id_tipo_credito",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -2679,10 +2654,10 @@ namespace SNIIV.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    descripcion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    descripcion = table.Column<string>(type: "text", nullable: true),
                     id_subprograma = table.Column<int>(type: "integer", nullable: false),
                     id_tipo_credito = table.Column<int>(type: "integer", nullable: false),
-                    etiqueta = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true)
+                    etiqueta = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -2825,7 +2800,7 @@ namespace SNIIV.Migrations
                 name: "financiamientos",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false),
+                    id = table.Column<long>(type: "bigint", nullable: false),
                     anio = table.Column<int>(type: "integer", nullable: false),
                     mes = table.Column<int>(type: "integer", nullable: false),
                     clave_organismo = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
@@ -2948,6 +2923,122 @@ namespace SNIIV.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "cubo_conavi_bak",
+                columns: table => new
+                {
+                    folio = table.Column<long>(type: "bigint", nullable: false),
+                    anio = table.Column<int>(type: "integer", nullable: false),
+                    clave_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    id_programa_presupuestal = table.Column<int>(type: "integer", nullable: false),
+                    mes = table.Column<int>(type: "integer", nullable: false),
+                    id_linea_apoyo = table.Column<int>(type: "integer", nullable: true),
+                    id_modalidad = table.Column<int>(type: "integer", nullable: false),
+                    id_esquema = table.Column<int>(type: "integer", nullable: false),
+                    id_tipo_ee = table.Column<int>(type: "integer", nullable: false),
+                    id_ee = table.Column<int>(type: "integer", nullable: false),
+                    id_oeo = table.Column<int>(type: "integer", nullable: false),
+                    id_genero = table.Column<int>(type: "integer", nullable: false),
+                    id_rango_edad = table.Column<int>(type: "integer", nullable: false),
+                    id_rango_salarial = table.Column<int>(type: "integer", nullable: false),
+                    id_valor_vivienda = table.Column<int>(type: "integer", nullable: false),
+                    id_tipo_vivienda = table.Column<int>(type: "integer", nullable: false),
+                    id_dc = table.Column<int>(type: "integer", nullable: false),
+                    id_vivienda_sustentable = table.Column<int>(type: "integer", nullable: false),
+                    id_pcu = table.Column<int>(type: "integer", nullable: false),
+                    monto = table.Column<decimal>(type: "numeric", nullable: false),
+                    acciones = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_cubo_conavi_bak", x => new { x.folio, x.anio, x.clave_estado, x.clave_municipio });
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_ee_id_ee",
+                        column: x => x.id_ee,
+                        principalTable: "c_ee",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_esquema_conavi_id_esquema",
+                        column: x => x.id_esquema,
+                        principalTable: "c_esquema_conavi",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_genero_id_genero",
+                        column: x => x.id_genero,
+                        principalTable: "c_genero",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_municipio_clave_estado_clave_municipio",
+                        columns: x => new { x.clave_estado, x.clave_municipio },
+                        principalTable: "c_municipio",
+                        principalColumns: new[] { "clave_entidad_federativa", "clave_mun" },
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_oeo_id_oeo",
+                        column: x => x.id_oeo,
+                        principalTable: "c_oeo",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_pcu_id_pcu",
+                        column: x => x.id_pcu,
+                        principalTable: "c_pcu",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_programa_presupuestal_id_programa_presupu~",
+                        column: x => x.id_programa_presupuestal,
+                        principalTable: "c_programa_presupuestal",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_rango_edad_id_rango_edad",
+                        column: x => x.id_rango_edad,
+                        principalTable: "c_rango_edad",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_rango_salarial_id_rango_salarial",
+                        column: x => x.id_rango_salarial,
+                        principalTable: "c_rango_salarial",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_subprograma_sniiv_id_modalidad",
+                        column: x => x.id_modalidad,
+                        principalTable: "c_subprograma_sniiv",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_tipo_ee_id_tipo_ee",
+                        column: x => x.id_tipo_ee,
+                        principalTable: "c_tipo_ee",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_tipo_vivienda_id_tipo_vivienda",
+                        column: x => x.id_tipo_vivienda,
+                        principalTable: "c_tipo_vivienda",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_valor_vivienda_id_valor_vivienda",
+                        column: x => x.id_valor_vivienda,
+                        principalTable: "c_valor_vivienda",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cubo_conavi_bak_c_vivienda_sustentable_id_vivienda_sustenta~",
+                        column: x => x.id_vivienda_sustentable,
+                        principalTable: "c_vivienda_sustentable",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "programas_conavi",
                 columns: table => new
                 {
@@ -2970,7 +3061,7 @@ namespace SNIIV.Migrations
                     edad = table.Column<int>(type: "integer", nullable: false),
                     id_genero = table.Column<int>(type: "integer", nullable: false),
                     ingreso_beneficiario = table.Column<decimal>(type: "numeric", nullable: false),
-                    ingreso_beneficiario_UMA = table.Column<decimal>(type: "numeric", nullable: false),
+                    ingreso_beneficiario_uma = table.Column<decimal>(type: "numeric", nullable: false),
                     beneficiario_comprometidos = table.Column<int>(type: "integer", nullable: false),
                     dato_presupuestal_importe_aprobado = table.Column<decimal>(type: "numeric", nullable: false),
                     dato_presupuestal_importe_ejercido = table.Column<decimal>(type: "numeric", nullable: false),
@@ -3129,7 +3220,7 @@ namespace SNIIV.Migrations
                     id_linea_credito = table.Column<int>(type: "integer", nullable: false),
                     responsabilidad_total = table.Column<int>(type: "integer", nullable: false),
                     id_moneda = table.Column<int>(type: "integer", nullable: false),
-                    ingreso_VSMMDF = table.Column<int>(type: "integer", nullable: false),
+                    ingreso_vsmmdf = table.Column<int>(type: "integer", nullable: false),
                     valor_vivienda = table.Column<int>(type: "integer", nullable: false),
                     tipo_comprobacion = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     id_sector_laboral = table.Column<int>(type: "integer", nullable: false),
@@ -3299,6 +3390,39 @@ namespace SNIIV.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "linea_credito_esquema_infonavit",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id_esquema_infonavit = table.Column<int>(type: "integer", nullable: false),
+                    id_linea_credito_infonavit = table.Column<int>(type: "integer", nullable: false),
+                    id_tipo_credito = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_linea_credito_esquema_infonavit", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_linea_credito_esquema_infonavit_c_esquema_infonavit_id_esqu~",
+                        column: x => x.id_esquema_infonavit,
+                        principalTable: "c_esquema_infonavit",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_linea_credito_esquema_infonavit_c_linea_credito_infonavit_b~",
+                        column: x => x.id_linea_credito_infonavit,
+                        principalTable: "c_linea_credito_infonavit_bak",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_linea_credito_esquema_infonavit_c_tipo_credito_id_tipo_cred~",
+                        column: x => x.id_tipo_credito,
+                        principalTable: "c_tipo_credito",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "conavi_semanal",
                 columns: table => new
                 {
@@ -3399,128 +3523,6 @@ namespace SNIIV.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "cubo_conavi_bak",
-                columns: table => new
-                {
-                    folio = table.Column<int>(type: "integer", nullable: false),
-                    anio = table.Column<int>(type: "integer", nullable: false),
-                    clave_estado = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
-                    clave_municipio = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
-                    id_programa_presupuestal = table.Column<int>(type: "integer", nullable: false),
-                    mes = table.Column<int>(type: "integer", nullable: false),
-                    id_linea_apoyo = table.Column<int>(type: "integer", nullable: false),
-                    id_modalidad = table.Column<int>(type: "integer", nullable: false),
-                    id_esquema = table.Column<int>(type: "integer", nullable: false),
-                    id_tipo_ee = table.Column<int>(type: "integer", nullable: false),
-                    id_ee = table.Column<int>(type: "integer", nullable: false),
-                    id_oeo = table.Column<int>(type: "integer", nullable: false),
-                    id_genero = table.Column<int>(type: "integer", nullable: false),
-                    id_rango_edad = table.Column<int>(type: "integer", nullable: false),
-                    id_rango_salarial = table.Column<int>(type: "integer", nullable: false),
-                    id_valor_vivienda = table.Column<int>(type: "integer", nullable: false),
-                    id_tipo_vivienda = table.Column<int>(type: "integer", nullable: false),
-                    id_dc = table.Column<int>(type: "integer", nullable: false),
-                    id_vivienda_sustentable = table.Column<int>(type: "integer", nullable: false),
-                    id_pcu = table.Column<int>(type: "integer", nullable: false),
-                    monto = table.Column<decimal>(type: "numeric", nullable: false),
-                    acciones = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_cubo_conavi_bak", x => new { x.folio, x.anio, x.clave_estado, x.clave_municipio });
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_ee_id_ee",
-                        column: x => x.id_ee,
-                        principalTable: "c_ee",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_esquema_conavi_id_esquema",
-                        column: x => x.id_esquema,
-                        principalTable: "c_esquema_conavi",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_genero_id_genero",
-                        column: x => x.id_genero,
-                        principalTable: "c_genero",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_linea_subsidio_conavi_id_modalidad",
-                        column: x => x.id_modalidad,
-                        principalTable: "c_linea_subsidio_conavi",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_municipio_clave_estado_clave_municipio",
-                        columns: x => new { x.clave_estado, x.clave_municipio },
-                        principalTable: "c_municipio",
-                        principalColumns: new[] { "clave_entidad_federativa", "clave_mun" },
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_oeo_id_oeo",
-                        column: x => x.id_oeo,
-                        principalTable: "c_oeo",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_pcu_id_pcu",
-                        column: x => x.id_pcu,
-                        principalTable: "c_pcu",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_programa_presupuestal_id_programa_presupu~",
-                        column: x => x.id_programa_presupuestal,
-                        principalTable: "c_programa_presupuestal",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_rango_edad_id_rango_edad",
-                        column: x => x.id_rango_edad,
-                        principalTable: "c_rango_edad",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_rango_salarial_id_rango_salarial",
-                        column: x => x.id_rango_salarial,
-                        principalTable: "c_rango_salarial",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_subprograma_sniiv_id_linea_apoyo",
-                        column: x => x.id_linea_apoyo,
-                        principalTable: "c_subprograma_sniiv",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_tipo_ee_id_tipo_ee",
-                        column: x => x.id_tipo_ee,
-                        principalTable: "c_tipo_ee",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_tipo_vivienda_id_tipo_vivienda",
-                        column: x => x.id_tipo_vivienda,
-                        principalTable: "c_tipo_vivienda",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_valor_vivienda_id_valor_vivienda",
-                        column: x => x.id_valor_vivienda,
-                        principalTable: "c_valor_vivienda",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cubo_conavi_bak_c_vivienda_sustentable_id_vivienda_sustenta~",
-                        column: x => x.id_vivienda_sustentable,
-                        principalTable: "c_vivienda_sustentable",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "linea_subsidio_tipo_ee",
                 columns: table => new
                 {
@@ -3554,11 +3556,6 @@ namespace SNIIV.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_banjercito_clave_entidad_federativa",
-                table: "banjercito",
-                column: "clave_entidad_federativa");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_banjercito_id_linea_credito",
                 table: "banjercito",
                 column: "id_linea_credito");
@@ -3576,6 +3573,11 @@ namespace SNIIV.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_c_linea_apoyo_presidencia_id_tipo_credito",
                 table: "c_linea_apoyo_presidencia",
+                column: "id_tipo_credito");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_c_linea_credito_banjercito_id_tipo_credito",
+                table: "c_linea_credito_banjercito",
                 column: "id_tipo_credito");
 
             migrationBuilder.CreateIndex(
@@ -3777,11 +3779,6 @@ namespace SNIIV.Migrations
                 name: "IX_cubo_conavi_bak_id_genero",
                 table: "cubo_conavi_bak",
                 column: "id_genero");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_cubo_conavi_bak_id_linea_apoyo",
-                table: "cubo_conavi_bak",
-                column: "id_linea_apoyo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_cubo_conavi_bak_id_modalidad",
@@ -4044,6 +4041,16 @@ namespace SNIIV.Migrations
                 column: "id_tipo_credito");
 
             migrationBuilder.CreateIndex(
+                name: "IX_linea_credito_esquema_infonavit_id_esquema_infonavit",
+                table: "linea_credito_esquema_infonavit",
+                column: "id_esquema_infonavit");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_linea_credito_esquema_infonavit_id_linea_credito_infonavit",
+                table: "linea_credito_esquema_infonavit",
+                column: "id_linea_credito_infonavit");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_linea_credito_esquema_infonavit_id_tipo_credito",
                 table: "linea_credito_esquema_infonavit",
                 column: "id_tipo_credito");
@@ -4230,7 +4237,7 @@ namespace SNIIV.Migrations
                 name: "banjercito");
 
             migrationBuilder.DropTable(
-                name: "c_avance_de_obra");
+                name: "c_avance_obra");
 
             migrationBuilder.DropTable(
                 name: "c_intermediario_financiero_cnbv");
@@ -4554,16 +4561,10 @@ namespace SNIIV.Migrations
                 name: "c_registro_patronal");
 
             migrationBuilder.DropTable(
-                name: "c_esquema_infonavit");
-
-            migrationBuilder.DropTable(
                 name: "c_estado_civil");
 
             migrationBuilder.DropTable(
                 name: "c_intermediario_financiero_infonavit");
-
-            migrationBuilder.DropTable(
-                name: "c_linea_credito_infonavit_bak");
 
             migrationBuilder.DropTable(
                 name: "c_linea_infonavit");
@@ -4576,6 +4577,12 @@ namespace SNIIV.Migrations
 
             migrationBuilder.DropTable(
                 name: "c_linea_credito_cnbv");
+
+            migrationBuilder.DropTable(
+                name: "c_esquema_infonavit");
+
+            migrationBuilder.DropTable(
+                name: "c_linea_credito_infonavit_bak");
 
             migrationBuilder.DropTable(
                 name: "c_linea_subsidio_conavi");

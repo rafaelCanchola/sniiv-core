@@ -22,7 +22,7 @@ namespace SNIIV.Models
 		public int edad {get; set;}
 		public int id_genero {get; set;}
 		public Decimal ingreso_beneficiario {get; set;}
-		public Decimal ingreso_beneficiario_UMA {get; set;}
+		public Decimal ingreso_beneficiario_uma {get; set;}
 		public int beneficiario_comprometidos {get; set;}
 		public Decimal dato_presupuestal_importe_aprobado {get; set;}
 		public Decimal dato_presupuestal_importe_ejercido {get; set;}

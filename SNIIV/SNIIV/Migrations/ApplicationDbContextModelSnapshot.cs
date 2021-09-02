@@ -21,17 +21,6 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.banjercito", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("acciones")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("anio")
-                        .HasColumnType("integer");
-
                     b.Property<string>("clave_entidad_federativa")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
@@ -40,6 +29,21 @@ namespace SNIIV.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
+                    b.Property<int>("id_linea_credito")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("anio")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("mes")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("acciones")
+                        .HasColumnType("integer");
+
                     b.Property<int>("edad")
                         .HasColumnType("integer");
 
@@ -47,14 +51,8 @@ namespace SNIIV.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
-                    b.Property<int>("id_linea_credito")
-                        .HasColumnType("integer");
-
-                    b.Property<decimal>("ingreso_VSMMDF")
+                    b.Property<decimal>("ingreso_vsmmdf")
                         .HasColumnType("numeric");
-
-                    b.Property<int>("mes")
-                        .HasColumnType("integer");
 
                     b.Property<decimal>("monto")
                         .HasColumnType("numeric");
@@ -68,16 +66,14 @@ namespace SNIIV.Migrations
                     b.Property<decimal>("valor_vivienda_vsmmdf")
                         .HasColumnType("numeric");
 
-                    b.HasKey("id");
-
-                    b.HasIndex("clave_entidad_federativa");
+                    b.HasKey("clave_entidad_federativa", "clave_municipio", "id_linea_credito", "anio", "mes", "id");
 
                     b.HasIndex("id_linea_credito");
 
                     b.ToTable("banjercito");
                 });
 
-            modelBuilder.Entity("SNIIV.Models.c_avance_de_obra", b =>
+            modelBuilder.Entity("SNIIV.Models.c_avance_obra", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +86,7 @@ namespace SNIIV.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("c_avance_de_obra");
+                    b.ToTable("c_avance_obra");
                 });
 
             modelBuilder.Entity("SNIIV.Models.c_clima", b =>
@@ -382,8 +378,7 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -398,8 +393,7 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -430,12 +424,10 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("etiqueta")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("id_subprograma")
                         .HasColumnType("integer");
@@ -454,13 +446,17 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.c_linea_credito_banjercito", b =>
                 {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
                     b.Property<int>("id_tipo_credito")
                         .HasColumnType("integer");
 
-                    b.Property<int>("id_subprograma")
-                        .HasColumnType("integer");
+                    b.HasKey("id");
 
-                    b.HasKey("id_tipo_credito");
+                    b.HasIndex("id_tipo_credito");
 
                     b.ToTable("c_linea_credito_banjercito");
                 });
@@ -646,8 +642,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<bool>("status")
                         .HasColumnType("boolean");
@@ -717,8 +712,7 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -733,12 +727,10 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("nombre")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -845,8 +837,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("clave", "id_delegacion");
 
@@ -897,8 +888,8 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("siglas")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("clave");
 
@@ -1145,8 +1136,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -1255,8 +1245,8 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("abreviacion")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("descripcion")
                         .HasMaxLength(50)
@@ -1275,8 +1265,7 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -1312,8 +1301,8 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("abreviacion")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("descripcion")
                         .HasMaxLength(50)
@@ -1380,8 +1369,8 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("abreviacion")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("descripcion")
                         .HasMaxLength(50)
@@ -1455,31 +1444,15 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.c_salario_infonavit", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<decimal>("A")
-                        .HasColumnType("numeric");
+                    b.Property<string>("descripcion")
+                        .HasColumnType("text");
 
-                    b.Property<decimal>("B")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("C")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("UMA")
-                        .HasColumnType("numeric");
-
-                    b.Property<int>("anio")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("periodo")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
-
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("c_salario_infonavit");
                 });
@@ -1491,9 +1464,23 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                    b.Property<decimal>("a")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("anio")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("b")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("c")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("periodo")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("uma")
+                        .HasColumnType("numeric");
 
                     b.HasKey("id");
 
@@ -1524,12 +1511,10 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("etiqueta")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -1543,8 +1528,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<int>("id_sector_economico_1")
                         .HasColumnType("integer");
@@ -1563,8 +1547,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("id_sector_economico_2")
                         .HasMaxLength(10)
@@ -1601,8 +1584,8 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("nombre")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<int>("orden")
                         .HasColumnType("integer");
@@ -1778,8 +1761,7 @@ namespace SNIIV.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("descripcion")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("id");
 
@@ -1981,12 +1963,10 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("grado_desar_declarado")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<string>("grado_desar_verificado")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<string>("municipio")
                         .HasColumnType("text");
@@ -2008,7 +1988,6 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<decimal>("sup_ha")
-                        .HasMaxLength(10)
                         .HasColumnType("numeric");
 
                     b.Property<int>("viv_no_urb")
@@ -2080,7 +2059,7 @@ namespace SNIIV.Migrations
                     b.Property<int>("id_sector_laboral")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ingreso_VSMMDF")
+                    b.Property<int>("ingreso_vsmmdf")
                         .HasColumnType("integer");
 
                     b.Property<int>("monto")
@@ -2119,12 +2098,6 @@ namespace SNIIV.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("Ingreso_men_bruto_acred")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Responsabilidad_total")
-                        .HasColumnType("integer");
 
                     b.Property<int>("cve_destino_credito")
                         .HasColumnType("integer");
@@ -2177,6 +2150,9 @@ namespace SNIIV.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
+                    b.Property<int>("ingreso_men_bruto_acred")
+                        .HasColumnType("integer");
+
                     b.Property<int>("monto_original_del_credito")
                         .HasColumnType("integer");
 
@@ -2186,6 +2162,9 @@ namespace SNIIV.Migrations
                     b.Property<int>("originacion_valor_vivienda")
                         .HasColumnType("integer");
 
+                    b.Property<int>("responsabilidad_total")
+                        .HasColumnType("integer");
+
                     b.HasKey("id");
 
                     b.ToTable("cnbv_coofinanciamiento");
@@ -2193,17 +2172,11 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.conavi_06100_fte_his", b =>
                 {
-                    b.Property<string>("PERIODO_REP")
+                    b.Property<string>("periodo_rep")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
                     b.Property<int>("id")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("Fecha_operacion")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("Folio")
                         .HasColumnType("integer");
 
                     b.Property<int>("acciones")
@@ -2250,6 +2223,12 @@ namespace SNIIV.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
+                    b.Property<DateTime>("fecha_operacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("folio")
+                        .HasColumnType("integer");
+
                     b.Property<string>("genero")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
@@ -2257,10 +2236,10 @@ namespace SNIIV.Migrations
                     b.Property<int>("id_programa_presupuestal")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("ingresos_VSMGV")
+                    b.Property<decimal>("ingresos_en_pesos")
                         .HasColumnType("numeric");
 
-                    b.Property<decimal>("ingresos_en_pesos")
+                    b.Property<decimal>("ingresos_vsmgv")
                         .HasColumnType("numeric");
 
                     b.Property<string>("linea_apoyo")
@@ -2310,7 +2289,7 @@ namespace SNIIV.Migrations
                     b.Property<decimal>("valor_solucion_habitacional")
                         .HasColumnType("numeric");
 
-                    b.HasKey("PERIODO_REP", "id");
+                    b.HasKey("periodo_rep", "id");
 
                     b.ToTable("conavi_06100_fte_his");
                 });
@@ -2580,8 +2559,8 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.cubo_financiamientos", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("integer");
+                    b.Property<long>("id")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -2592,9 +2571,6 @@ namespace SNIIV.Migrations
                     b.Property<string>("clave_organismo")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
-
-                    b.Property<int>("Id_tipo_credito")
-                        .HasColumnType("integer");
 
                     b.Property<int>("acciones")
                         .HasColumnType("integer");
@@ -2625,6 +2601,9 @@ namespace SNIIV.Migrations
                     b.Property<int>("id_rango_salarial")
                         .HasColumnType("integer");
 
+                    b.Property<int>("id_tipo_credito")
+                        .HasColumnType("integer");
+
                     b.Property<int>("id_valor_vivienda")
                         .HasColumnType("integer");
 
@@ -2641,8 +2620,8 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.cubo_fovissste_bak", b =>
                 {
-                    b.Property<int>("folio")
-                        .HasColumnType("integer");
+                    b.Property<long>("folio")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -2674,6 +2653,9 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("id_rango_edad")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("id_rango_salarial")
                         .HasColumnType("integer");
 
                     b.Property<int>("id_valor_vivienda")
@@ -2982,10 +2964,10 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.cubo_semanal", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<long>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<int>("acciones")
                         .HasColumnType("integer");
@@ -3103,8 +3085,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("ent")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("hasta_2_6_uma")
                         .HasColumnType("integer");
@@ -3113,8 +3094,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("mun")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("total_general")
                         .HasColumnType("integer");
@@ -3188,8 +3168,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("ent")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("hasta_2_6_uma")
                         .HasColumnType("integer");
@@ -3201,8 +3180,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("mun")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("total_general")
                         .HasColumnType("integer");
@@ -3216,8 +3194,8 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.desarrollador_fovissste", b =>
                 {
-                    b.Property<int>("folio")
-                        .HasColumnType("integer");
+                    b.Property<long>("folio")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -3277,8 +3255,8 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.financiamientos", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("integer");
+                    b.Property<long>("id")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -3350,8 +3328,8 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.fovissste", b =>
                 {
-                    b.Property<int>("folio")
-                        .HasColumnType("integer");
+                    b.Property<long>("folio")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -3368,12 +3346,11 @@ namespace SNIIV.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<string>("cuv")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("desarrollador")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<int>("edad")
                         .HasColumnType("integer");
@@ -3431,16 +3408,12 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.fovissste_00621_fte_his", b =>
                 {
-                    b.Property<string>("PERIODO_REP")
+                    b.Property<string>("periodo_rep")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
                     b.Property<int>("id")
                         .HasColumnType("integer");
-
-                    b.Property<string>("CUV")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
 
                     b.Property<int>("acciones")
                         .HasColumnType("integer");
@@ -3448,9 +3421,12 @@ namespace SNIIV.Migrations
                     b.Property<int>("contador")
                         .HasColumnType("integer");
 
+                    b.Property<string>("cuv")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
                     b.Property<string>("desarrollador")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
                     b.Property<string>("edad")
                         .HasMaxLength(10)
@@ -3462,14 +3438,14 @@ namespace SNIIV.Migrations
                     b.Property<DateTime>("fecha_de_firma")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("folio")
-                        .HasColumnType("integer");
+                    b.Property<long>("folio")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("genero")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
-                    b.Property<decimal>("ingreso_VSMMDF")
+                    b.Property<decimal>("ingreso_vsmmdf")
                         .HasColumnType("numeric");
 
                     b.Property<string>("intermediario_financiero")
@@ -3508,7 +3484,7 @@ namespace SNIIV.Migrations
                     b.Property<decimal>("valor_vivienda")
                         .HasColumnType("numeric");
 
-                    b.HasKey("PERIODO_REP", "id");
+                    b.HasKey("periodo_rep", "id");
 
                     b.ToTable("fovissste_00621_fte_his");
                 });
@@ -3544,15 +3520,16 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.habitat", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("acciones")
-                        .HasColumnType("integer");
+                    b.Property<string>("id")
+                        .HasColumnType("text");
 
                     b.Property<int>("anio")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("mes")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("acciones")
                         .HasColumnType("integer");
 
                     b.Property<string>("clave_entidad_federativa")
@@ -3586,9 +3563,6 @@ namespace SNIIV.Migrations
                     b.Property<decimal>("ingreso_salarial")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("mes")
-                        .HasColumnType("integer");
-
                     b.Property<decimal>("recurso_beneficiario")
                         .HasColumnType("numeric");
 
@@ -3607,7 +3581,7 @@ namespace SNIIV.Migrations
                     b.Property<int>("valor_vivienda")
                         .HasColumnType("integer");
 
-                    b.HasKey("id");
+                    b.HasKey("id", "anio", "mes");
 
                     b.HasIndex("clave_entidad_federativa");
 
@@ -4125,10 +4099,10 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.issste", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<long>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<int>("anio")
                         .HasColumnType("integer");
@@ -4221,16 +4195,20 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("id_esquema_Infonavit")
+                    b.Property<int>("id_esquema_infonavit")
                         .HasColumnType("integer");
 
-                    b.Property<int>("id_linea_credito_Infonavit")
+                    b.Property<int>("id_linea_credito_infonavit")
                         .HasColumnType("integer");
 
                     b.Property<int>("id_tipo_credito")
                         .HasColumnType("integer");
 
                     b.HasKey("id");
+
+                    b.HasIndex("id_esquema_infonavit");
+
+                    b.HasIndex("id_linea_credito_infonavit");
 
                     b.HasIndex("id_tipo_credito");
 
@@ -4266,15 +4244,17 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.mapa_oferta", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                    b.Property<string>("cv_oferta")
+                        .HasMaxLength(25)
+                        .HasColumnType("character varying(25)");
 
                     b.Property<int>("a_40_99")
                         .HasColumnType("integer");
 
                     b.Property<int>("anio")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("avance_0")
                         .HasColumnType("integer");
 
                     b.Property<int>("avance_1_19")
@@ -4300,10 +4280,6 @@ namespace SNIIV.Migrations
 
                     b.Property<string>("cv_oferente")
                         .HasColumnType("text");
-
-                    b.Property<string>("cv_oferta")
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
 
                     b.Property<string>("cve_ent")
                         .HasMaxLength(10)
@@ -4374,8 +4350,7 @@ namespace SNIIV.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("tx_oferente")
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasColumnType("text");
 
                     b.Property<int>("u1")
                         .HasColumnType("integer");
@@ -4398,7 +4373,7 @@ namespace SNIIV.Migrations
                     b.Property<int>("viv_term_rec")
                         .HasColumnType("integer");
 
-                    b.HasKey("id");
+                    b.HasKey("cv_oferta");
 
                     b.ToTable("mapa_oferta");
                 });
@@ -4508,7 +4483,7 @@ namespace SNIIV.Migrations
                     b.Property<decimal>("ingreso_beneficiario")
                         .HasColumnType("numeric");
 
-                    b.Property<decimal>("ingreso_beneficiario_UMA")
+                    b.Property<decimal>("ingreso_beneficiario_uma")
                         .HasColumnType("numeric");
 
                     b.Property<decimal>("latitud")
@@ -5008,10 +4983,10 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.sisevive", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<long>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<int>("ahorro_energia")
                         .HasColumnType("integer");
@@ -5248,7 +5223,9 @@ namespace SNIIV.Migrations
                 {
                     b.HasOne("SNIIV.Models.c_entidad_federativa", null)
                         .WithMany()
-                        .HasForeignKey("clave_entidad_federativa");
+                        .HasForeignKey("clave_entidad_federativa")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SNIIV.Models.c_linea_credito_banjercito", null)
                         .WithMany()
@@ -5900,6 +5877,18 @@ namespace SNIIV.Migrations
 
             modelBuilder.Entity("SNIIV.Models.linea_credito_esquema_infonavit", b =>
                 {
+                    b.HasOne("SNIIV.Models.c_esquema_infonavit", null)
+                        .WithMany()
+                        .HasForeignKey("id_esquema_infonavit")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SNIIV.Models.c_linea_credito_infonavit_bak", null)
+                        .WithMany()
+                        .HasForeignKey("id_linea_credito_infonavit")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SNIIV.Models.c_tipo_credito", null)
                         .WithMany()
                         .HasForeignKey("id_tipo_credito")

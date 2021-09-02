@@ -5,6 +5,6 @@ namespace SNIIV.Models
 	public class c_producto_hipotecario
 	{
 		[StringLength(10)] public string id {get; set;}
-		[StringLength(50)] public string descripcion {get; set;}
+		public string descripcion {get; set;}
 	}
 }

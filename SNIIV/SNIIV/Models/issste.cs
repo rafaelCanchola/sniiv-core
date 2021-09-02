@@ -1,10 +1,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SNIIV.Models
 {
 	public class issste
 	{
-		[Key]public int id {get; set;}
+		[Key]
+		[Column(TypeName = "bigint")]
+		public int id {get; set;}
 		public int anio {get; set;}
 		public int mes {get; set;}
 		[StringLength(10)] public string clave_entidad_federativa {get; set;}
