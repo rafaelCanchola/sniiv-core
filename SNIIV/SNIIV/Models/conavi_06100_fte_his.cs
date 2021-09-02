@@ -4,6 +4,7 @@ namespace SNIIV.Models
 {
 	public class conavi_06100_fte_his
 	{
+
 		public DateTime fecha_operacion {get; set;}
 		[StringLength(10)] public string genero {get; set;}
 		[StringLength(10)] public string edad {get; set;}
